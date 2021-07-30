@@ -9,7 +9,6 @@
 </head>
 
 <body>
-<!-- Display a payment form -->
 <form id="payment-form" th:action="@{/}" th:object="${checkoutForm}" method="post">
   <p>Welcome to visa / master card fee payment</p>
   <input type="text" th:field="*{email}" placeholder="Email address" />
@@ -20,7 +19,6 @@
     <div class="spinner hidden" id="spinner"></div>
     <span id="button-text">Submit</span>
   </button>
-<!--  <input type="submit" />-->
 </form>
 </body>
 </html>

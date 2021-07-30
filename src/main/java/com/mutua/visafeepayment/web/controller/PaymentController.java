@@ -20,7 +20,6 @@ public class PaymentController {
                     .setCurrency("usd")
                     .setAmount(createPayment.getAmount() / 100L)
                     .build();
-            // Create a PaymentIntent with the order amount and currency
             PaymentIntent intent = PaymentIntent.create(createParams);
             return new CreatePaymentResponse(intent.getClientSecret());
 
