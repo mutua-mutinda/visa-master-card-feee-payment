@@ -18,7 +18,7 @@ public class PaymentController {
     public CreatePaymentResponse CreatePaymentIntent(@RequestBody @Valid CreatePayment createPayment) throws StripeException {
             PaymentIntentCreateParams createParams = new PaymentIntentCreateParams.Builder()
                     .setCurrency("usd")
-                    .setAmount(createPayment.getAmount() / 10L)
+                    .setAmount(createPayment.getAmount() / 100L)
                     .build();
             // Create a PaymentIntent with the order amount and currency
             PaymentIntent intent = PaymentIntent.create(createParams);

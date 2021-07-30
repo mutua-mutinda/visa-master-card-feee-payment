@@ -66,7 +66,10 @@ var payWithCard = function(stripe, card, clientSecret) {
     .confirmCardPayment(clientSecret, {
       receipt_email: email,
       payment_method: {
-        card: card
+        card: card,
+        billing_details: {
+           email: email
+        }
       }
     })
     .then(function(result) {
