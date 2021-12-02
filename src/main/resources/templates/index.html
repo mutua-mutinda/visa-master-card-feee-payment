@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head>
   <meta charset="utf-8" />
   <title>Accept a card payment</title>
@@ -9,16 +10,17 @@
 </head>
 
 <body>
-<form id="payment-form" th:action="@{/}" th:object="${checkoutForm}" method="post">
-  <p>Welcome to visa / master card fee payment</p>
-  <input type="text" th:field="*{email}" placeholder="Email address" />
-  <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
-  <input type="text" th:field="*{amount}" placeholder="Amount" />
-  <p th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></p>
-  <button id="submit">
-    <div class="spinner hidden" id="spinner"></div>
-    <span id="button-text">Submit</span>
-  </button>
-</form>
+  <form id="payment-form" th:action="@{/}" th:object="${checkoutForm}" method="post">
+    <p>Welcome to visa / master card fee payment</p>
+    <input type="email" th:field="*{email}" placeholder="Email address" />
+    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+    <input type="text" th:field="*{amount}" placeholder="Amount" />
+    <p th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></p>
+    <button id="submit">
+      <div class="spinner hidden" id="spinner"></div>
+      <span id="button-text">Submit</span>
+    </button>
+  </form>
 </body>
+
 </html>

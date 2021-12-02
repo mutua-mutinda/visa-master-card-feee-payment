@@ -57,9 +57,6 @@ fetch("/create-payment-intent", {
     });
   });
 
-// Calls stripe.confirmCardPayment
-// If the card requires authentication Stripe shows a pop-up modal to
-// prompt the user to enter authentication details without leaving your page.
 var payWithCard = function(stripe, card, clientSecret) {
   loading(true);
   stripe
